@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function validate(){
+
+    
+    let p1=document.frm.pwd.value;
+
+    let p2=p1.length;
+    if (p2<8){
+        alert("password must contain more than 8 characters");
+         return false;
+  
+    }
+
+
+    let m1=document.frm.usr.value;
+    let m2=m1.length;
+    if (m2>11){
+        alert("username does not exceed 10 characters");
+        return false;
+    }
+
+    let reg=/^[a-z0-9]+@9[a-z]+\.[a-z]{2,3}$/;
+        let em=frm.em.value;
+        if(reg.test(em))
+        {
+            alert("Mail format is wrong");
+            return false;
+        }
+    }
+
+
+</script>
+<body>
+
+    <center>
+    <h1>Login Page</h1>
+<form name="frm" method="post" action="login.html" onsubmit="return validate()">
+    <label for="un">Username:</label>
+    <input type="text" name="usr" id="usr" required><br>
+    <br>
+    <label for="pwd" >Password:</label>
+    <input type="password" name="pwd" placeholder="enter Password" required><br>
+    <br>
+    <label for="em">Email:</label>
+    <input type="email" name="em"  placeholder="Enter your email" ><br>
+    <br>
+    <br>
+    <input style="color: black;" type="submit" value="Submit">
+
+</form>
+</center>
+
+</body>
+</html>
